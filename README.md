@@ -1,2 +1,4 @@
 # Asteroid-Blaster-2022
-Remake of Asteroid Blaster I made in 2014 using Processing (Java) but now in Python.
+Following a Space Invader tutorial from Tech With Tim
+
+*https://www.youtube.com/watch?v=Q-__8Xw9KTM*
