@@ -53,18 +53,18 @@ class Player(Ship):     #Inherit from Ship class
             self.max_health = health
             
 class Enemy(Ship):
-      COLOR_MAP = {
+        COLOR_MAP = {
             "red": (RED_SPACE_SHIP, RED_LASER),       #Dictionary mapping key:value
             "green": (GREEN_SPACE_SHIP, GREEN_LASER),
             "blue": (BLUE_SPACE_SHIP, BLUE_LASER)
-      }
+        }
 
-      def __init__(self, x, y, health=100):
+        def __init__(self, x, y, color, health=100):
             super().__init__(x, y, health)
             self.ship_img, self.laser_img = self.COLOR_MAP[color]
             self.mask = pygame.mask.from_surface(self.ship_img)
 
-      def move(self, vel):
+        def move(self, vel):
             self.y += vel
 
 def main():
@@ -107,8 +107,7 @@ def main():
                   level += 1
                   wave_length += 5
                   for i in range(wave_length):
-                        #Generate rand color enemies above the window
-                        enemy = Enemy(random.randrange(50, WIDTH-100), random.randrange(-1500, -100), random.choice(["red", "green", "blue"]))
+                        enemy = Enemy( random.randrange(50, WIDTH-100), random.randrange(-1500, -100), random.choice(["red", "green", "blue"]))
                         enemies.append(enemy)
 
             for event in pygame.event.get():    #Check for a user input (click or key press)
